@@ -5,13 +5,12 @@
   "description": "Watch latest Tamil movies, updates and trailers",
   "start_url": "https://moviedatamilnetflix.blogspot.com/p/body-text-align-center.html",
   "scope": "/",
-  "display": "standalone",
-  "orientation": "portrait",
+  "display": "fullscreen",
+  "orientation": "any",
   "background_color": "#000000",
   "theme_color": "#e50914",
   "lang": "en",
-  "dir": "ltr",
-
+  "dir": "auto",
   "icons": [
     {
       "src": "icon-192.png",
@@ -26,7 +25,6 @@
       "purpose": "any maskable"
     }
   ],
-
   "screenshots": [
     {
       "src": "icon-512.png",
@@ -38,5 +36,9 @@
       "sizes": "540x720",
       "type": "image/png"
     }
+  ],
+  "prefer_related_applications": true,
+  "categories": [
+    "entertainment"
   ]
 }
