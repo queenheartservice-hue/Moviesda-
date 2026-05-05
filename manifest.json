@@ -1,4 +1,43 @@
-q      "sizes": "540x720",
+{
+  "id": "/?source=pwa",
+  "name": "Tamil Movies App",
+  "short_name": "Movies",
+  "description": "Watch latest Tamil movies, updates and trailers",
+  "start_url": "https://moviedatamilnetflix.blogspot.com/p/body-text-align-center.html",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#e50914",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": [
+    "entertainment",
+    "video"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png ",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icon-512.png",
+      "sizes": "540x720",
       "type": "image/png"
     },
     {
@@ -7,7 +46,6 @@ q      "sizes": "540x720",
       "type": "image/png"
     }
   ],
-
   "shortcuts": [
     {
       "name": "Latest Movies",
