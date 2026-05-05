@@ -9,6 +9,7 @@
   "display_override": [
     "standalone",
     "minimal-ui"
+    "window-controls-overlay"
   ],
   "orientation": "portrait",
   "background_color": "#000000",
