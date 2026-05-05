@@ -15,28 +15,35 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// Activate
+// Activate (clean old caches)
 self.addEventListener("activate", (event) => {
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
 });
 
 // Fetch
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
     event.respondWith(
-      fetch(event.request)
-        .then((response) => {
-          return response;
-        })
-        .catch(async () => {
-          const cache = await caches.open(CACHE_NAME);
-          return await cache.match(OFFLINE_URL);
-        })
+      fetch(event.request).catch(async () => {
+        const cache = await caches.open(CACHE_NAME);
+        return await cache.match(OFFLINE_URL);
+      })
     );
   } else {
     event.respondWith(
       caches.match(event.request).then((response) => {
-        return response || fetch(event.request);
+        return response || fetch(event.request).catch(() => null);
       })
     );
   }
